@@ -21,6 +21,10 @@ def io_samples_callback(sample, remote, time):
     print("REMOTE ID: " + str(remote.get_64bit_addr()))
     print("REMOTE NAME: " + REMOTE_NODE_IDS[index])
     print("SAMPLE VALUE: " + str(sample.get_analog_value(ANALOG_LINES[index])))
+    dash(sample.get_analog_value(ANALOG_LINES[index]))
+
+def dash(analog_reading): 
+    #display dash data 
 
 #utility function for outputting remote index in lists such as REMOTE_NODE_IDS and ANALOG_LINES
 def find_remote_index(remote):
@@ -32,7 +36,7 @@ def find_remote_index(remote):
             i += 1
     return -1
 
-#main function
+#main
 def main():
     print(" | Launching MyoCarta V2 07/25/18 |")
     all_connected = True
@@ -77,7 +81,7 @@ def main():
         for rem in REMOTE_DEVICES:
             print(str(rem.get_64bit_addr()) + " ")
     
-        response = input(" | Launch successful. Press any key to start data collection. |")
+        print("Launch successful. Starting data collection...")
 
         device.add_io_sample_received_callback(io_samples_callback)
         input()
