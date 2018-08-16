@@ -1,4 +1,10 @@
 # final-jasonxzhou
+
+Files in this repo:  
+test2.py -> final myocarta code  
+profile_4060.xpro -> xbee configuration file for sensor zigbee
+need to add profile for coordinator/dongle zigbee
+
 To run:  
 Install digi xbee python library  
 Install pubnub python library  
